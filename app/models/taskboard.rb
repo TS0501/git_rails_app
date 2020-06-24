@@ -1,0 +1,2 @@
+class Taskboard < ApplicationRecord
+end
