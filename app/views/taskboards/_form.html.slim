@@ -1,3 +1,8 @@
+- if taskboard.errors.present?
+  .alert.alert-danger
+    ul#error_explanation
+      - taskboard.errors.full_messages.each do |message|
+        li= message
 = form_with model: taskboard, local: true do |f|
   .form-group
     = f.label :name
