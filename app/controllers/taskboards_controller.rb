@@ -1,6 +1,6 @@
 class TaskboardsController < ApplicationController
   def index
-    @taskboads = Taskboard.all
+    @taskboads = Taskboard.all.order(created_at: :desc)
   end
 
   def show
