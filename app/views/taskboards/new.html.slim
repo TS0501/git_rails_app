@@ -1,2 +1,6 @@
-h1 Taskboards#new
-p Find me in app/views/taskboards/new.html.slim
+h1 
+  i タスク新規作成
+.nav.justify-content-end
+  = link_to '一覧', taskboards_path, class: 'btn btn-primary'
+
+=render partial: 'form', locals: { taskboard: @taskboard }
