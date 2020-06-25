@@ -22,3 +22,6 @@ table.table.table-hover
     tr
       th= Taskboard.human_attribute_name(:updated_at)
       td= @taskboard.updated_at
+
+= link_to '編集', edit_taskboard_path, class: 'btn btn-primary mr-3'
+= link_to '削除', @taskboard, method: :delete, data: { confirm: "タスク「#{@taskboard.name}」を削除します。よろしいですか？"}, class: 'btn btn-danger'
