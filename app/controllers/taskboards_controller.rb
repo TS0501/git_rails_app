@@ -4,6 +4,7 @@ class TaskboardsController < ApplicationController
   end
 
   def show
+    @taskboard = Taskboard.find(params[:id])
   end
 
   def new

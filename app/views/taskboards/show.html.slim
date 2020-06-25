@@ -1,2 +1,24 @@
-h1 Taskboards#show
-p Find me in app/views/taskboards/show.html.slim
+h1
+  i タスク詳細
+
+.nav.justify-content-end
+  = link_to '一覧', taskboards_path, class: 'btn btn-primary'
+
+.mb-3
+table.table.table-hover
+  tbody
+    tr
+      th= Taskboard.human_attribute_name(:id)
+      td= @taskboard.id
+    tr      
+      th= Taskboard.human_attribute_name(:name)
+      td= @taskboard.name
+    tr
+      th= Taskboard.human_attribute_name(:description)
+      td= simple_format(h(@taskboard.description), {}, sanitize: false, wrapper_tag: "div")
+    tr
+      th= Taskboard.human_attribute_name(:created_at)
+      td= @taskboard.created_at
+    tr
+      th= Taskboard.human_attribute_name(:updated_at)
+      td= @taskboard.updated_at

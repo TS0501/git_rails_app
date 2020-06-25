@@ -13,7 +13,7 @@ table.table.table-hover
   tbody
     - @taskboads.each do |taskboard|
       tr
-        td= taskboard.name
+        td= link_to taskboard.name, taskboard
         td= taskboard.created_at
         td
           = link_to '編集', edit_taskboard_path(taskboard), class: 'btn btn-primary mr-3'
