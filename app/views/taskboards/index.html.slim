@@ -1,2 +1,20 @@
-h1 Taskboards#index
-p Find me in app/views/taskboards/index.html.slim
+h1
+  i タスク一覧
+.mb-3
+= link_to '新規登録', new_taskboard_path, class: 'btn btn-primary'
+
+.mb-3
+table.table.table-hover
+  thead.thead-default
+    tr
+      th= Taskboard.human_attribute_name(:name)
+      th= Taskboard.human_attribute_name(:created_at)
+      th
+  tbody
+    - @taskboads.each do |taskboard|
+      tr
+        td= taskboard.name
+        td= taskboard.created_at
+        td
+          = link_to '編集', edit_taskboard_path(taskboard), class: 'btn btn-primary mr-3'
+          = link_to '削除', taskboard, method: :delete, data: { confirm: "タスク「#{taskboard.name}」を削除します。宜しいですか？"}, class: 'btn btn-danger'
